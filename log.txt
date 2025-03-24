@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+
+int main() {
+    std::ofstream logFile("log.txt", std::ios::app); // Open file in append mode
+    if (logFile.is_open()) {
+        logFile << "This is a log entry.\n";
+        std::cout << "Log entry added to log.txt" << std::endl;
+        logFile.close();
+    } else {
+        std::cerr << "Unable to open log file!" << std::endl;
+    }
+    return 0;
+}
+
